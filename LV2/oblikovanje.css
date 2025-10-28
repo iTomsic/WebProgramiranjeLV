@@ -1,0 +1,49 @@
+body {
+
+    background-color: lightgrey;
+
+}
+
+p {
+
+    text-align: right;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-style: italic;
+    color: blue;
+
+}
+
+.prvi {
+
+    text-align: center;
+    color: red;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 110%;
+
+}
+
+#odlomak2 {
+
+    text-align: justify;
+    font-family: Verdana, sans-serif;
+
+}
+
+a {
+
+    text-decoration: none;
+    color: grey
+
+}
+
+a:hover {
+
+    text-decoration: underline;
+    color: yellow;
+
+}
+
+footer {
+
+    margin-top: auto;
+}
