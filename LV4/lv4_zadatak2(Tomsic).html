@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.zadatak</title>
+
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+    
+    <h1>Validacija</h1>
+
+    <div>
+        <button ondblclick="pozdrav()">Pozdrav</button><br>
+ 
+        <label for="imePrezime">Ime i prezime:</label>
+        <input type="text" id="imePrezime"><br><br>
+
+        <label for="poljeZaIspis">Polje za ispis:</label><br>
+        <textarea id="poljeZaIspis" cols="50" rows="10"></textarea><br><br>
+
+        <label for="broj">Unesi broj (1-10):</label>
+        <input type="text" id="broj" required>
+        <i class="fas fa-info-circle" title="Uneseni broj mora biti između 1 i 10"></i>
+        <button onclick="kvadrirajBroj()">Kvadriraj broj</button><br>
+        <div id="rezultatBroj"></div><br>
+
+        <button onmouseup="kolegiji()">Kolegiji</button>
+        <button onmouseover="obrisi()">Obriši</button><br><br>
+
+        <label for="email">E-mail:</label>
+        <input type="text" id="email"><br><br>
+
+
+        <button onclick="validacijaPodataka()">Provjeri!</button>
+    </div>
+
+    <script>
+
+        function pozdrav() {
+            for (let i = 5; i >= 1; i--) {
+                alert("Ostalo upozorenja do kraja: " + i);
+            }
+        }
+
+
+        function kvadrirajBroj() {
+            let broj = document.getElementById("broj").value;
+            let rezultat = document.getElementById("rezultatBroj");
+            broj = Number(broj);
+            if (broj >= 1 && broj <= 10) {
+                rezultat.innerHTML = "Kvadrat broja: " + (broj*broj);
+            } else {
+                rezultat.innerHTML = "<span style='color:red;'>Broj mora biti između 1 i 10!</span>";
+            }
+        }
+
+        function kolegiji() {
+            let kolegiji = ["Programiranje 1", "Programiranje 2", "Matematika 1", "Matematika 2", "Fizika", "Osnove elektrotehnike", "Osnove elektronike", "Tjelesni"];
+            document.getElementById("poljeZaIspis").value = "";
+            for (let i in kolegiji) {
+                document.getElementById("poljeZaIspis").value += "Kolegij broj [" + i + "]: " + kolegiji[i] + "\n";
+            }
+        }
+
+        function obrisi() {
+            document.getElementById("poljeZaIspis").value = "";
+        }
+
+        function validacijaPodataka() {
+            let imePrezime = document.getElementById("imePrezime").value.trim();
+            let tekst = document.getElementById("poljeZaIspis").value;
+            let email = document.getElementById("email").value.trim();
+
+            if (imePrezime === "") {
+                alert("Unesite ime i prezime!");
+                return;
+            }
+
+            if (tekst.length > 30) {
+                alert("Tekstualno polje ne smije imati više od 30 znakova!");
+                return;
+            }
+
+            let emailRegex = /^[^\s@]{2,}@[^\s@]{2,}\.[^\s@]{2,}$/;
+            if (!emailRegex.test(email)) {
+                alert("Email nije ispravno unesen!");
+                return;
+            }
+
+            let validacija = confirm(`Vaše ime i prezime je ${imePrezime}, vaša email adresa ${email}.`);
+            if (validacija == true) {
+                alert("Podaci su potvrđeni!");
+            } else {
+                alert("Podaci nisu potvrđeni.");
+            }
+        }
+    </script>
+
+</body>
+</html>

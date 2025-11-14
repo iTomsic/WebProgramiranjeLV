@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.zadatak</title>
+
+    <script>
+
+    var prviString = "Prvi";
+    let drugiString = "Drugi";
+    const treciString = "Treci";
+    
+    console.log("Prije mijenjanja: ")
+    console.log(prviString);
+    console.log(drugiString);
+    console.log(treciString);
+
+    prviString = "Opet prvi";
+    drugiString = "Opet drugi";
+    // treciString = "Opet treci";
+    
+    console.log("Nakon mijenjanja: ")
+    console.log(prviString);
+    console.log(drugiString);
+    console.log(treciString);
+    console.log("Daje nam error, ne smijemo mijenjati varijable deklarirane s const");
+
+    // Uncaught TypeError: Assignment to constant variable. (ne smijemo mijenjati const)
+    // at lv4_zadatak1Tomsic.html:20:17
+
+    let text = "Ovo je prvi JS primjer";
+    console.log(text);
+
+    let textLength = text.length;
+    console.log("Duzina teksta je: " + textLength);
+
+    let textUpperCase = text.toUpperCase();
+    console.log("Tekst u svim velikim slovima je: " + textUpperCase);
+
+    let textLowerCase = text.toLowerCase();
+    console.log("Tekst u svim malim slovima je: " + textLowerCase);
+
+    let pocetnoSlovo = text.charAt(0);
+    console.log("Pocetno slovo teksta je: " + pocetnoSlovo);
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
