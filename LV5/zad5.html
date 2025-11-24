@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadatak 5</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <style>
+        .container {
+            width: 250px;
+            height: 250px;
+            border: 2px solid black;
+            display: inline-block;
+            margin: 5px;
+            position: relative;
+            text-align: center;
+        }
+
+        .container p {
+            margin-top: 0;
+            font-weight: bold;
+        }
+
+        .draggable {
+            width: 180px;
+            height: 180px;
+            cursor: move;
+            margin-bottom: 0px; 
+            position: relative;
+        }
+
+        .black {
+            background-color: black;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        #kocke {
+            margin-top: 0px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="naslov">Najgluplja igra ikada!</h1>
+
+    <div id="crna" class="container">
+        <p>Crna</p>
+    </div>
+
+    <div id="crvena" class="container">
+        <p>Crvena</p>
+    </div>
+
+    <div id="kocke">
+        <div id="kockaCrvena" class="draggable red"></div>
+        <div id="kockaCrna" class="draggable black"></div>
+    </div>
+
+    <script src="zad5.js"></script>
+</body>
+</html>

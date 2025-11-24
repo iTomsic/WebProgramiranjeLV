@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zadatak 2</title>
+</head>
+<body>
+  
+  <h2>Primjer JSON</h2>
+
+  <script>
+    fetch("primjer.json").then(response => response.json()).then(podatci => {
+
+    console.log("Podatci:", JSON.parse(JSON.stringify(podatci)));
+
+        podatci[1].ime = "Patrik";
+        podatci[1].godina = 22;
+        podatci[1].redStudent = true;
+        podatci[1].najdraziKolegiji = ["Programiranje u Javi", "Tjelesni", "Web programiranje"];
+
+        console.log("Izmijenjeni podatci:", podatci);
+
+        localStorage.setItem("Podatci", JSON.stringify(podatci));
+
+        let localPodatci = localStorage.getItem("Podatci");
+        localPodatci = JSON.parse(localPodatci);
+
+        console.log("Podaci iz localStorage:", localPodatci);
+
+      })
+  </script>
+
+</body>
+</html>
